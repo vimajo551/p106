@@ -1,5 +1,5 @@
-var dog =;
-var cat =;
+var dog = "";
+var cat = "";
 
 function startClassification(){
     navigator.mediaDevices.getUserMedia({audio:true})
@@ -19,24 +19,17 @@ function gotResults(error,results){
         random_number_b = Math.floor(Math.random() * 255) + 1;
 
         document.getElementById("result_label").innerHTML = "Posso ouvir - "+results[0].label;
-        document.getElementById("result_count").innerHTML = "cachorro detectado - "+dog+ "gato detectado - "+cat;
+        //document.getElementById("result_count").innerHTML = "cachorro detectado - "+dog+ "gato detectado - "+cat;
         document.getElementById("result_label").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
-        document.getElementById("result_count").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
+        //document.getElementById("result_count").style.color = "rgb("+random_number_r+","+random_number_g+","+random_number_b+")";
 
 
         if(results[0].label=="cachorro"){
-            document.getElementById("r").src="download.png" = true;
-            document.getElementById("r").src="download (1).png" = false;
-            document.getElementById("r").src="download (2).png" = false;
-
+            document.getElementById("r").src="download.png"
         }else if(results[0].label=="gato"){
-            document.getElementById("r").src="download.png";
             document.getElementById("r").src="download (1).png";
-            document.getElementById("r").src="download (2).png";
         }else{
-            document.getElementById("r").src="download.png";
-            document.getElementById("r").src="download (1).png";
-            document.getElementById("r").src="download (2).png";
+            document.getElementById("r").src="images.png";
         }
 
     }
